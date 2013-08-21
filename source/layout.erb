@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <%= stylesheet_link_tag "main" %>
+  </head>
+  <body>
+
+    <div class="container-fluid content">
+      <div class="row-fluid">
+        <div class="intro row-fluid">  
+          <img src="/images/P1110568-1.JPG">
+        </div>
+      </div>
+      <%= partial 'nav_links' %>  
+
+      <div class="row-fluid">
+        <div class="span9 main-content">
+          <%= yield %>
+        </div>
+
+        <div class="span3 sidebar">
+          <aside>
+            <h4>近期文章</h4>
+              <% blog.articles[0...10].each do |article| %>
+                <p><%= link_to article.title, article %></p>
+              <% end %>
+            <h4>Tags</h4>
+            <% blog.tags.each do |tag, articles| %>
+              <%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</a>
+            <% end %>
+
+            <h4>By Year</h4>
+              <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+                <%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a>
+              <% end %>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
