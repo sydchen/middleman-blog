@@ -8,22 +8,22 @@
   <body>
 
     <div class="container-fluid content">
-      <div class="row-fluid">
-        <div class="intro row-fluid">  
-          <img src="/images/P1110568-1.JPG">
-        </div>
+      <div class="hero-unit intro">
+        <%# <div class="row-fluid"> %>
+          <h2>壯遊前夕</h2>
+        <%# </div> %>
       </div>
-      <%= partial 'nav_links' %>  
+      <%= partial 'nav_links' %>
 
       <div class="row-fluid">
-        <div class="span9 main-content">
+        <div class="span8 main-content">
           <%= yield %>
         </div>
 
-        <div class="span3 sidebar">
+        <div class="span3 offset1 sidebar">
           <aside>
             <h4>近期文章</h4>
-              <% blog.articles[0...10].each do |article| %>
+              <% blog.articles[0...5].each do |article| %>
                 <p><%= link_to article.title, article %></p>
               <% end %>
             <h4>Tags</h4>
