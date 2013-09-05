@@ -17,7 +17,7 @@ body {
 
 .main-content {
     margin-right: 1em;
-    padding-right: 20px;
+    padding: 0px 12px;
 }
 
 .row-fluid .sidebar {
@@ -29,9 +29,18 @@ body {
     float: right;
 }
 
+.socials {
+    margin-right: 12px;
+}
+
+.nav a.social-networks {
+    padding: 0;
+}
+
 .metadata {
+    font-size: 15px;
     margin-top: 20px;
-    padding: 10px 0px;
+    padding: 5px 0px;
     color: #666666;
 }
 
@@ -65,9 +74,5 @@ aside {
     font-size: 16px;
     line-height: 22px;
   }
-}
-
-.nav a.social-networks {
-    padding: 0;
 }
 
