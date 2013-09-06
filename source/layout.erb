@@ -9,9 +9,7 @@
 
     <div class="container-fluid content">
       <div class="hero-unit intro">
-        <%# <div class="row-fluid"> %>
-          <h2>壯遊前夕</h2>
-        <%# </div> %>
+        <h2>壯遊前夕</h2>
       </div>
       <%= partial 'nav_links' %>
 
@@ -26,15 +24,12 @@
               <% blog.articles[0...5].each do |article| %>
                 <p><%= link_to article.title, article %></p>
               <% end %>
+          </aside>
+          <aside>
             <h4>Tags</h4>
             <% blog.tags.each do |tag, articles| %>
               <%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</a>
             <% end %>
-
-            <h4>By Year</h4>
-              <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-                <%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a>
-              <% end %>
           </aside>
         </div>
       </div>
