@@ -4,19 +4,25 @@ body {
     font-size: 18px;
 }
 
-.intro {
+header {
     margin-top: 30px;
+
+    a:link, a:visited {
+        color: #000;
+        text-decoration: none;
+    }
 }
 
 .content {
     background-color: white;
-    margin: 0 auto;
+    margin: 32px auto 32px auto;
     max-width: 1000px;
     padding-left: 30px;
 }
 
 .main-content {
     margin-right: 1em;
+    margin-bottom: 4em;
     padding: 0px 12px;
 }
 
@@ -75,6 +81,38 @@ aside {
 
   margin-bottom: 60px;
   padding: 10px 25px;
-  background-color: #f2f2f2;
+  background-color: #EBF0F5;
 }
 
+aside.tags {
+    padding: 8px;
+}
+
+.tags ul {
+    list-style: none;
+    margin: 0 !important;
+}
+
+.tags li {
+    display: inline-block;
+    margin: 2px 1px;
+    padding: 4px 10px;
+    line-height: 24px;
+    font-size: 16px;
+    background-color: #CC99FF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    a:link, a:visited {
+      color: #8A2E8A;
+    }
+}
+
+pre code {
+    font-size: 14px;
+}
+
+code {
+    font-size: 13px;
+}

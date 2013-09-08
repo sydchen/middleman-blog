@@ -1,7 +1,7 @@
 ---
 title: 蘋果正式發出媒體邀請函，將在美國時間9月10日舉辦iPhone發表會！
 date: 2013-09-05 23:56
-tags: news apple iphone
+tags: news, apple, iphone
 ---
 
 根據The Loop網站報導，蘋果在今天正式寄出了媒體邀請函，將在美國時間2013年9月10日星期二，太平洋時間上午10點（台灣時間9月11日星期三凌晨1點），在蘋果Cupertino總部舉行下一代iPhone發表會。
