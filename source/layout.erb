@@ -21,18 +21,20 @@
 
         <div class="span3 offset1 sidebar">
           <aside>
-            <img src="http://www.gravatar.com/avatar/ab6237f719d3ceb3d1329af116fe77f0?s=80">
             <h4>Syd</h4>
+            <img src="http://www.gravatar.com/avatar/ab6237f719d3ceb3d1329af116fe77f0?s=80">
           </aside>
           <aside>
             <h4>近期文章</h4>
+              <div class="recently-articles">
               <% blog.articles[0...5].each do |article| %>
                 <p><%= link_to article.title, article %></p>
               <% end %>
+              </div>
           </aside>
-          <aside class="tags">
+          <aside>
             <h4>Tags</h4>
-            <ul>
+            <ul class="tags">
             <% blog.tags.each do |tag, articles| %>
               <%= content_tag(:li, (link_to tag, tag_path(tag))) %>
             <% end %>
