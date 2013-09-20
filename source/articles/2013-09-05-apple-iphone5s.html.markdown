@@ -8,6 +8,8 @@ tags: news, apple, iphone
 
 上方從蘋果寄出的媒體邀請函，有許多彩色的平面化圓點圖示，幾乎呼應謠言中蘋果將推出平價、彩色版的iPhone 5C，並且直接搭載最新的iOS 7介面。
 
+READMORE
+
 目前預期蘋果將在下週的發表會上推出下一代iPhone，命名為iPhone 5S，外形和iPhone 5差異不大，但是可能會搭載雙LED燈、升級相機鏡頭還有搭載指紋辨識掃瞄器在Home鍵上，另外就是內部硬體可能會升級處理器、記憶體等等，顏色上除了黑、白，更多了一款金色。另外還有會有平價、塑膠多彩顏色外殼的iPhone，命名為iPhone 5C，用來取代現行的iPhone 5（規格應該也和iPhone 5差不多），以下為謠言流出的iPhone 5C外盒包裝，還有對應顏色的彩色主畫面。
 
 ![iPhone5S](/images/iphone5s.jpg)
