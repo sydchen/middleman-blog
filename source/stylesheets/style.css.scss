@@ -6,7 +6,6 @@ body {
 
 header {
     margin-top: 30px;
-
     a:link, a:visited {
         color: #000;
         text-decoration: none;
@@ -24,6 +23,10 @@ header {
     margin-right: 1em;
     margin-bottom: 4em;
     padding: 0px 12px;
+
+    p {
+        margin: 0 0 20px 0;
+    }
 }
 
 .row-fluid .sidebar {
@@ -44,13 +47,30 @@ header {
 
 .metadata {
     font-size: 15px;
-    margin-top: 20px;
-    padding: 5px 0px;
     color: #666666;
+
+    p {
+        margin: 0;
+    }
+
+    span {
+        display:inline-block;
+        vertical-align:middle;
+    }
+}
+
+.continue-reading {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 article {
     padding-right: 60px;
+
+    h3 {
+        margin-bottom: 30px;
+    }
 }
 
 .recently {
@@ -88,6 +108,12 @@ aside {
       letter-spacing: 1px;
   }
 
+  hr {
+    margin: 10px 0;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+  }
+
   .recently-articles { padding: 8px; }
   img { margin: 20px }
 
@@ -107,9 +133,9 @@ ul.tags {
      line-height: 24px;
      font-size: 15px;
      background-color: #47885e;
-     -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-     border-radius: 5px;
+     -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+     border-radius: 3px;
 
      a:link, a:visited {
        color: #fff;

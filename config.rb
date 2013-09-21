@@ -48,7 +48,9 @@ page "/feed.xml", :layout => false
 #
 # With no layout
 # page "/path/to/file.html", :layout => false
-#
+
+page "articles/*", :layout => :article_layout
+
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
 #
