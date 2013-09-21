@@ -6,7 +6,6 @@
     <%= stylesheet_link_tag "main" %>
   </head>
   <body>
-
     <div class="container-fluid content">
       <header class="hero-unit">
         <a href="/"><h2>壯遊前夕</h2></a>
@@ -27,8 +26,11 @@
           <aside>
             <h4>近期文章</h4>
               <div class="recently-articles">
-              <% blog.articles[0...5].each do |article| %>
+              <% blog.articles[0...5].each_with_index do |article, index| %>
                 <p><%= link_to article.title, article %></p>
+                <% if index < 4 %>
+                <hr>
+                <% end %>
               <% end %>
               </div>
           </aside>

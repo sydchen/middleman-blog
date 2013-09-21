@@ -1,0 +1,18 @@
+<% wrap_layout :layout do %>
+  <article>
+    <h3><%= current_page.title %></h3>
+    <%= yield %>
+
+    <div class="metadata">
+      <p>發表於 <%= current_page.date.strftime('%Y-%m-%d %k:%M') %></p>
+      <span>標籤:</span>
+      <span>
+        <ul class="tags">
+        <% current_page.tags.each do |tag, articles| %>
+          <%= content_tag(:li, (link_to tag, tag_path(tag))) %>
+        <% end %>
+        </ul>
+      </span>
+    </div>
+  </article>
+<% end %>
