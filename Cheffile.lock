@@ -1,0 +1,24 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apache2 (1.7.0)
+    build-essential (1.4.2)
+    passenger_apache2 (2.0.4)
+      apache2 (>= 1.0.4)
+      build-essential (>= 0.0.0)
+    ruby_build (0.8.0)
+
+GIT
+  remote: https://github.com/fnichol/chef-rbenv
+  ref: v0.7.2
+  sha: f2b53292e810dd2b43f6121f9958f5f29979dcb1
+  specs:
+    rbenv (0.7.2)
+
+DEPENDENCIES
+  apache2 (>= 0)
+  build-essential (>= 0)
+  passenger_apache2 (>= 0)
+  rbenv (>= 0)
+  ruby_build (>= 0)
+
