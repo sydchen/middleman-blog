@@ -20,12 +20,11 @@ header {
 }
 
 .main-content {
-    margin-right: 1em;
     margin-bottom: 4em;
-    padding: 0px 12px;
+    padding: 0 1em 0 0.5em;
 
     p {
-        margin: 0 0 20px 0;
+        margin: 1.5em 0;
     }
 }
 
@@ -129,7 +128,7 @@ ul.tags {
   li {
      display: inline-block;
      margin: 4px 1px;
-     padding: 1px 4px;
+     padding: 1px 6px;
      line-height: 24px;
      font-size: 15px;
      background-color: #47885e;
