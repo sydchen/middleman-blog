@@ -26,6 +26,11 @@ header {
     p {
         margin: 1.5em 0;
     }
+
+    a.pull-right {
+        float: right;
+        margin-right: 3.5em;
+    }
 }
 
 .row-fluid .sidebar {
@@ -144,3 +149,5 @@ ul.tags {
 
 pre code { font-size: 14px; }
 code { font-size: 13px; }
+
+#disqus_thread { margin-top: 1.2em; }
