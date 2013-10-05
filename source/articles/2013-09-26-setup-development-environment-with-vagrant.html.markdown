@@ -1,5 +1,5 @@
 ---
-title: 使用Vagrant建立開發環境
+title: 使用Vagrant建立Rails開發環境
 date: 2013-09-26 22:10
 tags: ruby,rails,vagrant
 ---
@@ -17,7 +17,7 @@ $ vagrant init centos-6.3 https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x8
 
 READMORE
 
-VM需要Box來初始化，[Vagrantvbox.es](http://www.vagrantbox.es/)裡有不少Box檔提供下載，選擇CentOS 6.3 x86_64 minimal，`https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box`
+VM需要Box來初始化，[Vagrantvbox.es](http://www.vagrantbox.es/)裡有不少Box檔提供下載，選擇[CentOS 6.3 x86_64 minimal](https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box)
 
 #### 設定 Vagrantfile
 使用`Chef Solo` provisioning，先抓取所需cookbooks，[Opscode community](http://community.opscode.com/)可以找到前人寫好的cookbooks。
@@ -52,7 +52,7 @@ $ librarian-chef install
 
 開始設定Vagrantfile，我們需要安裝
 
-* rbenv 
+* rbenv
 * ruby_build
 * build-essential
 * apache2
@@ -66,7 +66,7 @@ config.vm.provision :chef_solo do |chef|
   chef.add_recipe 'rbenv::system'
   chef.add_recipe 'apache2'
   chef.add_recipe 'passenger_apache2'
-end  
+end
 ~~~
 
 設定cookbook recipes裡所需的attributes，
@@ -112,7 +112,7 @@ Vagrant::Config.run do |config|
   config.vm.box_url = "https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box"
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+  # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
@@ -145,11 +145,26 @@ end
 最後啟動vagrant box
 
 ~~~
-vagrant up
+$ vagrant up
 ~~~
 
-`vagrant ssh`進入vagrant vm
+進入vagrant vm
+
+~~~
+$ vagrant ssh
+~~~
 
 cookbooks新增/修改可以透過`vagrant provision` 更新
+
+#### 其他指令
+
+```
+$ vagrant status
+$ vagrant suspend
+$ vagrant resume
+$ vagrant halt - shut down VM
+$ vagrant package - package up the virtual machine in its current state into a file called package.box
+$ vagrant destroy - delete VM
+```
 
 其他更詳細的說明，請參考[Vagrant Documentation](http://docs.vagrantup.com/v2/)
