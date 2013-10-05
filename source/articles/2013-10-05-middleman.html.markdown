@@ -22,4 +22,4 @@ Middleman整合了不少工具，讓Prototyping更為快速而簡潔。
 * **LiveReload** - 自動重載瀏覽器的頁面
 * **Asset Pipeline** - Dependency Management for Assets files like JavaScript and CSS
 
-下一篇將介紹使用Middleman建置Project。
+下一篇將介紹安裝Middleman還有相關配置。
