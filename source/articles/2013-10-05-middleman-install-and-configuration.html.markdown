@@ -134,7 +134,7 @@ $ middleman server
 測試 `http://0.0.0.0:4567`
 
 
-產生出statis files
+產生出static files
 
 ```
 $ middleman build
