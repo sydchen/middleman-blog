@@ -6,7 +6,7 @@ tags: css,sass
 
 ![sass](/images/sass.gif)
 
-Sass是CSS3的擴展，包含了**Variables**、**Nesting**、**Mixins**、**Selector Inheritance**，藉由撰寫Sass來產生出CSS，如此一來CSS變得好維護而且模組化。
+[Sass](http://sass-lang.com/)是CSS3的擴展，包含了**Variables**、**Nesting**、**Mixins**、**Selector Inheritance**，藉由撰寫Sass來產生出CSS，如此一來CSS變得好維護而且模組化。
 
 #### 安裝
 系統須先安裝Ruby，安裝sass 這個gem就行了
@@ -105,13 +105,21 @@ a {
 
 #### Variables
 
+syntax: `$變數名稱: 變數值`
+
+ex:
+
 ```
 $blue: #3bbfce;
+$font: Helvetica, sans-serif;
 ```
+
+引用變數
 
 ```
 // .scss
 .content-navigation {
+  font-family: $font-stack;
   border-color: $blue;
   color:
     darken($blue, 9%);
@@ -119,6 +127,7 @@ $blue: #3bbfce;
 
 // .sass
 .content-navigation
+  font-family: $font-stack
   border-color: $blue
   color: darken($blue, 9%)
 ```
@@ -155,6 +164,42 @@ li
     size: 1.2em
 ```
 
+#### Import
+將大的CSS file切割為數個最小的CSS files，再使用`@import`引入
+例如:
+
+```
+/* _reset.scss */
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+```
+
+```
+/* _base.scss */
+
+@import 'reset';
+
+body {
+  font-size: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+```
+
+引用
+
+```
+/* main.scss */
+
+@import "reset";
+@import "base";
+```
+
 #### Mixins
 像巨集一樣，經常可重複使用的CSS可寫成Mixin，例如常常需要指定`box-sizing` property，而且須針對不同瀏覽器的實作去設定
 
@@ -169,22 +214,32 @@ li
 變可以寫成Maxin
 
 ```
-@mixin bs($bs-type) {     -webkit-box-sizing: $bs-type;     -moz-box-sizing: $bs-type;     box-sizing: $bs-type;}
+@mixin bs($bs-type) {
+    -webkit-box-sizing: $bs-type;
+    -moz-box-sizing: $bs-type;
+    box-sizing: $bs-type;
+}
 ```
 
 當某元素需要設定box-sizing時，只需要`@include`即可
 
 ```
-*{	@include bs(border-box);}
+*{
+    @include bs(border-box);
+}
 ```
 
 Mixin傳入的引數設定預設值
 
 ```
-@mixin bs($bs-type: border-box) {     -webkit-box-sizing: $bs-type;     -moz-box-sizing: $bs-type;     box-sizing: $bs-type;}
+@mixin bs($bs-type: border-box) {
+    -webkit-box-sizing: $bs-type;
+    -moz-box-sizing: $bs-type;
+    box-sizing: $bs-type;
+}
 ```
 
-#### Selector Inheritance
+#### Extend / Inheritance
 使用`@extend`繼承其他已定義好的style rule
 
 ```
@@ -235,7 +290,7 @@ $color7: #49afcd;
   border: 2px dotted #49afcd; }
 ```
 
-`placeholder` selector
+#### Placeholder selector
 
 placeholder selector 可以讓要被繼承的base rule只是用來被繼承，本身並不會在產出的css中
 
