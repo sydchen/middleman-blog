@@ -20,6 +20,8 @@ gem 'capistrano-rails', '~> 1.1.0'
 
 `capistrano-bundler`在Server端程式碼更新後跑bundler，`capistrano-rails`則是跑migrations 和 assets compile，但我們只會用到migrations這部分，因為capistrano-rails並沒有支持*assets precompile*，直接在Server跑，但大多數情況應該是先在本機端先跑precompile才是。
 
+READMORE
+
 #### Initialize Capistrano
 執行
 

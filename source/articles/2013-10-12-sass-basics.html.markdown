@@ -24,6 +24,8 @@ sass --watch style.scss:style.css
 Sass有兩種語法一種是常見的**SCSS**，另一種是**SASS**
 ，SCSS的語法相容於CSS3(是CSS3的superset)，SASS少掉括弧和分號，利用**縮排**來完成css rule間的階層關係。
 
+READMORE
+
 #### CSS 輸出格式
 輸出的css有4種格式`nested`(此為預設)、`expanded`、`compact`、`compressed`
 
