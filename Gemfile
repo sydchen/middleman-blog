@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem "middleman", "~> 3.1.4"
-gem "middleman-blog", "~> 3.2.0"
+gem "middleman", "~> 3.2.2"
+gem "middleman-blog"
 gem "bootstrap-sass", :require => false
 gem "redcarpet"
 
