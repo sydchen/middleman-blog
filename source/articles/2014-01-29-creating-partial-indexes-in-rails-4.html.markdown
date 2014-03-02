@@ -19,6 +19,8 @@ WHERE STATUS IN ('A', 'P', 'W');
 對於long VARCHAR column可對於**前N字元**設定index，所以也稱之為**index prefix**，好處是可以減少indexes空間，INSERT資料時也會快些。
 至於有效的N值如何取得，可以參考[How to calculate cardinality](http://www.mysqldba.co.uk/articles/2008/02/26/how-to-calculate-cardinality/)這篇文章。
 
+READMORE
+
 Rails 4 後`add_index` 開始支援partial index
 
 以PostgreSQL為例，假設有個Book model
