@@ -153,10 +153,11 @@ ul.tags {
   }
 }
 
-pre code { font-size: 16px; }
+code { font-size: 14px; }
 pre[class*="language-"] {
     font-size: 16px;
     border: 0;
+    code { font-size: 16px; }
 }
 
 #disqus_thread { margin-top: 1.2em; }
