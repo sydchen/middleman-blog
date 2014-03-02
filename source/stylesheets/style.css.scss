@@ -154,6 +154,10 @@ ul.tags {
 }
 
 code { font-size: 14px; }
+pre {
+    border: 0;
+    background: #f5f2f0;
+}
 pre[class*="language-"] {
     font-size: 16px;
     border: 0;
