@@ -23,7 +23,7 @@ Rails 4 後`add_index` 開始支援partial index
 
 以PostgreSQL為例，假設有個Book model
 
-```
+```language-ruby
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
@@ -37,13 +37,13 @@ end
 
 對於category = 'science'的row，欄位name和author建立partial index
 
-```
+```language-ruby
 add_index(:books, [:name, :author], unique: true, where: "category = 'sciency'")
 ```
 
 `db/schema.rb`中產生如下的syntax
 
-```
+```language-ruby
 add_index "books", ["name", "author"], name: "index_books_on_name_and_author", unique: true, where: "((category)::text = 'science'::text)", using: :btree
 ```
 

@@ -11,13 +11,13 @@ tags: css,sass
 #### 安裝
 系統須先安裝Ruby，安裝sass 這個gem就行了
 
-```
+```language-bash
 gem install sass
 ```
 
 將sass編譯輸出為css
 
-```
+```language-bash
 sass --watch style.scss:style.css
 ```
 
@@ -33,7 +33,7 @@ READMORE
 
 例如:
 
-```
+```language-scss
 #main {
   color: #fff;
   background-color: #000; }
@@ -43,7 +43,7 @@ READMORE
 
 **expanded style** 像我們平常寫的css一樣，右大括號單獨一行，對齊首字元
 
-```
+```language-scss
 #main {
   color: #fff;
   background-color: #000;
@@ -55,20 +55,20 @@ READMORE
 
 **compact style** 移除不必要的空白，每條css rule只佔一行(即使多個properties)
 
-```
+```language-scss
 #main { color: #fff; background-color: #000; }
 #main p { width: 10em; }
 ```
 
 最後是檔案最少，適合production的**compressed style**
 
-```
+```language-scss
 #main{color:#fff;background-color:#000}#main p{width:10em}
 ```
 
 在command line 中可由 `--style` 指定style
 
-```
+```language-bash
 sass --style expanded style.scss
 ```
 
@@ -78,7 +78,7 @@ sass --style expanded style.scss
 所以下面的sass
 
 
-```
+```language-scss
 /* This comment is
  * several lines long.
  * since it uses the CSS comment syntax,
@@ -93,7 +93,7 @@ a { color: green; }
 
 產生出的css如下
 
-```
+```language-css
 /* This comment is
  * several lines long.
  * since it uses the CSS comment syntax,
@@ -111,14 +111,14 @@ syntax: `$變數名稱: 變數值`
 
 ex:
 
-```
+```language-scss
 $blue: #3bbfce;
 $font: Helvetica, sans-serif;
 ```
 
 引用變數
 
-```
+```language-scss
 // .scss
 .content-navigation {
   font-family: $font-stack;
@@ -136,7 +136,7 @@ $font: Helvetica, sans-serif;
 
 #### Nesting
 
-```
+```language-scss
 // .scss
 table.hl {
   margin: 2em 0;
@@ -170,7 +170,7 @@ li
 將大的CSS file切割為數個最小的CSS files，再使用`@import`引入
 例如:
 
-```
+```language-scss
 /* _reset.scss */
 
 html,
@@ -182,7 +182,7 @@ ol {
 }
 ```
 
-```
+```language-scss
 /* _base.scss */
 
 @import 'reset';
@@ -195,7 +195,7 @@ body {
 
 引用
 
-```
+```language-scss
 /* main.scss */
 
 @import "reset";
@@ -205,7 +205,7 @@ body {
 #### Mixins
 像巨集一樣，經常可重複使用的CSS可寫成Mixin，例如常常需要指定`box-sizing` property，而且須針對不同瀏覽器的實作去設定
 
-```
+```language-scss
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -215,7 +215,7 @@ body {
 
 變可以寫成Maxin
 
-```
+```language-scss
 @mixin bs($bs-type) {
     -webkit-box-sizing: $bs-type;
     -moz-box-sizing: $bs-type;
@@ -225,7 +225,7 @@ body {
 
 當某元素需要設定box-sizing時，只需要`@include`即可
 
-```
+```language-scss
 *{
     @include bs(border-box);
 }
@@ -233,7 +233,7 @@ body {
 
 Mixin傳入的引數設定預設值
 
-```
+```language-scss
 @mixin bs($bs-type: border-box) {
     -webkit-box-sizing: $bs-type;
     -moz-box-sizing: $bs-type;
@@ -244,7 +244,7 @@ Mixin傳入的引數設定預設值
 #### Extend / Inheritance
 使用`@extend`繼承其他已定義好的style rule
 
-```
+```language-scss
 $color1: #faa732;
 $color4: #5bb75b;
 $color7: #49afcd;
@@ -276,7 +276,7 @@ $color7: #49afcd;
 
 輸出css
 
-```
+```language-css
 .btn, .btn-warning, .btn-success, .btn-info {
   display: inline-block;
   padding: 4px 12px;
@@ -298,7 +298,7 @@ placeholder selector 可以讓要被繼承的base rule只是用來被繼承，�
 
 注意到btn前面的符號變成`%`了
 
-```
+```language-scss
 %btn {
   display: inline-block;
   padding: 4px 12px;
@@ -326,7 +326,7 @@ placeholder selector 可以讓要被繼承的base rule只是用來被繼承，�
 
 產生出來的css也少了`.btn`了，
 
-```
+```language-css
 .btn-warning, .btn-success, .btn-info {
   display: inline-block;
   padding: 4px 12px;
